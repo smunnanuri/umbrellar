@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RegressionSuite]">
+  <test thread-count="5" name="RegressionTestCases(failed)">
+    <classes>
+      <class name="com.umbrellarlogin.RegisterUserTest">
+        <methods>
+          <include name="afterClass"/>
+          <include name="testRegisteruser"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.umbrellarlogin.RegisterUserTest -->
+    </classes>
+  </test> <!-- RegressionTestCases(failed) -->
+</suite> <!-- Failed suite [RegressionSuite] -->
