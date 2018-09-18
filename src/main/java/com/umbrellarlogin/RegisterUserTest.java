@@ -1,19 +1,15 @@
 package com.umbrellarlogin;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class RegisterUserTest {
 
@@ -29,9 +25,11 @@ public class RegisterUserTest {
 
  @Test
   public void testLogin() throws InterruptedException {
+
 // Open Register User Web Page
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	driver.findElementByLinkText("Register").click();
+
 // Register a User
 	driver.findElementByName("firstName").sendKeys("Shilpa");
 	driver.findElementByName("lastName").sendKeys("Munnanuri");
@@ -49,7 +47,6 @@ public class RegisterUserTest {
 	driver.findElementByXPath("//*[text()='Register']/preceding-sibling::*").click();
 
 // Verify User Details
-	
 	String text = driver.findElement(By.tagName("h1")).getText();
 	Assert.assertTrue(text.contains("Shilpa"), "Text found");
 	String text1 = driver.findElement(By.tagName("li")).getText();
